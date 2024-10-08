@@ -15,12 +15,12 @@ conexao.once("open", () => {
 
 const app = express();
 
-// Apply CORS before defining routes
+
 app.use(cors({
-    origin: 'http://localhost:5173' // Allow requests from this origin
+    origin: 'http://localhost:5173' 
 }));
 
-// Define routes after CORS middleware
+
 routes(app);
 
 export default app;
