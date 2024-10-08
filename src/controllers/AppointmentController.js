@@ -35,7 +35,9 @@ class AppointmentController {
                     const appointmentCriado = await appointment.create(novoAppointment)
                     res.status(201).json({message: "Criado com sucesso", appointment: appointmentCriado });
                 } else {
-                    res.status(400).json({message: "Já existe um agendamento nesse horario, selecione outro." });
+                    const message = "Já existe um agendamento nesse horario, selecione outro.";
+                    console.error(message);
+                    res.status(400).json({ message });
                 }
             } else {
                 const appointmentCriado = await appointment.create(novoAppointment)
